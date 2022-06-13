@@ -1,0 +1,15 @@
+{
+  "main": "hsa.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "firebase": "^9.8.2"  
+  }
+
+}
+
+
+
+

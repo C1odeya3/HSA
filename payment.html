@@ -4,113 +4,237 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
   <title>Checkout</title>
+  <style>
+  body{
+    background-image:url("images/orfeas-green-G5A5ZNjS2tE-unsplash.jpg");
+    /* https://unsplash.com/photos/G5A5ZNjS2tE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink */
+  }
+  </style>
 </head>
 
 <body>
+  <!-- <img class="responsive-img" src="images/joel-filipe-VuwAfoHpxgs-unsplash.jpg"> -->
 
-  <div class="container">
-    <h1>Payments</h1>
-  </div>
-  <div class="col s12 l5 offset-l2">
-    <form action="">
-      <div class="row">
-        <div class="col">
-          <h3 class="subhead">Billing Address :</h3>
-          <div class="b1">
-            <div class="input-field">
-              <i class="material-icons prefix">account_circle</i>
-              <input type="text" id="fname">
-              <label for="text">Fullname :</label>
+  <nav class="z-depth-0 blue-grey">
+    <div class="nav-wrapper container" id="top">
+      <a href="#!" class="brand-logo">
+        <img src="images/logo.png" alt="HSA_logo" style="width:180px; margin-top:5px; border: 1px solid #607d8b; border-radius:2pt;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="">Home</a></li>
+        <li><a href="">Book</a></li>
+        <li><a href="">Shop</a></li>
+        <li><a href="">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container ">
+      <h1 class="center  white-text col s12 l5 offset-l2">Payments</h1>
+    </div>
+    <div id="contCheck" class="container center">
+      <div class="col s12 l5 offset-l2">
+        <form id="checkOut-form" action="Order_Confirmation.html" method="POST">
+          <div class="row">
+            <!-- opening first column -->
+            <div class="col">
+              <div class="card white">
+                <div class="card-content">
+                  <h3 class="subhead blue-grey-text text-darken-1 ">Billing Address :</h3>
+                  <!-- opening section input div1 -->
+                  <div class="b1">
+                    <!-- name input div -->
+                    <div class="input-field">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input type="text" name="Fullname" id="fullname" required/>
+                      <label class="blue-grey-text text-darken-1" for="fullname">Fullname :</label>
+                    </div>
+                    <!-- address input div -->
+                    <div class="input-field">
+                      <i class="material-icons prefix">home</i>
+                      <input type="text" name="Street_Address" id="address" required/>
+                      <label class="blue-grey-text text-darken-1" for="address">Street Address :</label>
+                    </div>
+                    <!-- city input div -->
+                    <div class="input-field">
+                      <i class="material-icons prefix">location_city</i>
+                      <input type="text" name="City" id="city" required/>
+                      <label class="blue-grey-text text-darken-1" for="city">City :</label>
+                    </div>
+                    <!-- province selector input div -->
+                    <div class="input-field">
+                      <select name = "Province" class="browser-default waves-effect blue-grey darken-1 btn">
+                        <option value="" disabled="" selected="">Select your province</option>
+                        <option value="Eastern Cape">Eastern Cape</option>
+                        <option value="Free State">Free State</option>
+                        <option value="Gauteng">Gauteng</option>
+                        <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                        <option value="Limpopo">Limpopo</option>
+                        <option value="Mpumalanga">Mpumalanga</option>
+                        <option value="Northen Cape">Northen Cape</option>
+                        <option value="North West">North West</option>
+                        <option value="Western Cape">Western Cape</option>
+                      </select>
+                    </div>
+                    <!-- postal code input div -->
+                    <div class="input-field s12">
+                      <i class="material-icons prefix">mail</i>
+                      <input type="text" name="Postal_Code" id="Postal Code" placeholder="1234" required/>
+                      <label class="blue-grey-text text-darken-1" for="Postal Code">Postal Code :</label>
+                    </div>
+                    <p>
+                      <label>
+                        <input type="checkbox" checked="checked"/>
+                        <span>
+                          Shipping Address Same As Billing
+                        </span>     
+                      </label>
+                    </p>
+                    <!-- closing section input div1 -->
+                  </div>
+                </div>
+              </div>
+              <!-- closing first column -->
             </div>
-            <div class="input-field">
-              <i class="material-icons prefix">home</i>
-              <input type="text" id="address">
-              <label for="text">Street Address :</label>
-            </div>
-            <div class="input-field">
-              <i class="material-icons prefix">location_city</i>
-              <input type="text" id="city">
-              <label for="text">City :</label>
-            </div>
-            <div class="input-field">
-              <select class="browser-default waves-effect waves-light btn">
-                <option value="" disabled="" selected="">Select your province</option>
-                <option value="1">Eastern Cape</option>
-                <option value="2">Free State</option>
-                <option value="3">Gauteng</option>
-                <option value="4">KwaZulu-Natal</option>
-                <option value="5">Limpopo</option>
-                <option value="6">Mpumalanga</option>
-                <option value="7">Northen Cape</option>
-                <option value="8">North West</option>
-                <option value="9">Western Cape</option>
-              </select>
 
-            </div>
-            <div class="input-field s12">
-              <i class="material-icons prefix">mail</i>
-              <input type="text" id="Postal code" placeholder="1234">
-              <label for="text">Postal Code :</label>
-            </div>
-          </div>
-        </div>
-        <div class="b2">
-          <div class="col">
-            <h3 class="subhead">Payment Options :</h3>
+            <div class="row">
+              <!-- opening second column -->
+              <div class="col">
+                <div class="card white">
+                  <div class="card-content">
+                    <h3 class="subhead blue-grey-text text-darken-1 ">Payment Options :</h3>
+                    <!-- opening section input div2 -->
+                    <div class="b2">
+                      <!-- tab input div -->
+                      <div class="containerz">
+                        <div class="row">
+                          <div class="col s12">
+                            <ul class="tabs z-depth-1 tabs-fixed-width blue-grey darken-1">
+                              <li class="tab col s3"><a href="#nav_card" class="white-text text-darken-3" class="active" class="teal lighten-2" class="fa fa-credit-card-alt">Credit/Debit Card</a></li>
+                              <li class="tab col s3"><a href="#nav_pay" class="white-text text-darken-3" class="teal lighten-2" class="fa fa-cc-paypal">PayPal</a></li>
+                              <li class="tab col s3"><a href="#nav_zap" class="white-text text-darken-3" class="teal lighten-2" class="fa fa-cc-mastercard">Zapper</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- closing tab input div -->
+                      </div>
 
-            <div class="input-field">
-              <input type="text" id="name">
-              <label for="text">Cards Accepted :</label>
-            </div>
-            <div class="input-field">
-              <input type="text">
-              <label for="text">Cardholder's Name :</label>
-            </div>
-            <div class="input-field">
-              <input type="number" placeholder="0000-0000-0000-0000">
-              <label for="number">Card Number :</label>
-            </div>
-            <div class="input-field">
-              <input type="number" class="datepicker">
-              <label for="text">Expiry :</label>
-            </div>
-            <div class="input-field">
-              <i class="material-icons prefix">credit_card</i>
-              <input type="number" id="cvv" placeholder="123" data-length="3">
-              <label for="number">CVV :</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+                      <div class="col s12" id="nav_card">
+                        <div class="input-field">
+                          <input type="text" id="name"/>
+                          <label class="blue-grey-text text-darken-1" for="text">Cards Accepted :</label>
+                        </div>
+                        <div class="input-field">
+                          <input type="text"/>
+                          <label class="blue-grey-text text-darken-1" for="text">Cardholder's Name :</label>
+                        </div>
+                        <div class="input-field">
+                          <input type="number" placeholder="0000-0000-0000-0000"/>
+                          <label class="blue-grey-text text-darken-1" for="number">Card Number :</label>
+                        </div>
+                        <div class="row">
+                          <div  class="input-label"><label class="blue-grey-text text-darken-1" for="expiry">Expiry</label></div>
+                          <div class="input-field col s6">
+                            <input placeholder="MM" id="first_name" type="number" class="validate"/>
+                          </div>
+                          <div class="input-field col s6">
+                            <input placeholder="YY" id="last_name" type="number" class="validate"/>
+                          </div>
+                        </div>
+                        <div class="input-field">
+                          <i class="material-icons prefix">credit_card</i>
+                          <input type="number" id="cvv" placeholder="123" data-length="3"/>
+                          <label class="blue-grey-text text-darken-1" for="cvv">CVV :</label>
+                        </div>
+                      </div>
 
+                      <div class="col s12" id="nav_pay">
+                        <p>Press the sign in button below to pay using PayPal:</p>
+                        <!-- the button below redirects you to the paypal login screen -->
+                        <div class="white-text">
+                          <button class="btn waves-effect wave-light blue-grey darken-1" type="button" name="button"><a class="white-text" href="https://www.paypal.com/za/signin">Sign In</a>
+                            <i class="material-icons right"></i>
+                          </button>
+                        </div>
+                      </div>
 
+                      <div class="col s12" id="nav_zap">
+                        <p><strong>To pay using Zapper, press the button below:</strong></p>
+                        <!-- pressing the button redirects you to a dummy QR code from the internet -->
+                        <div class="white-text">
+                          <button class="btn waves-effect wave-light blue-grey darken-1" type="button" name="button"><a class="white-text" href="http://mybroadband.co.za/news/wp-content/uploads/2014/07/Zapper-QR-code-example.jpg">Scan to Pay</a>
+                            <i class="material-icons right"></i>
+                          </button>
+                        </div>
+                      </div>
 
+                        </div>
+                      </div>
+                    <!-- closing section input div2 -->
+                    </div>
+                  </div>
+                  <!-- card close -->
+                </div>
+                <!-- closing second column -->
+              </div>
+            </div>
+            <!-- final button -->
+            <div class="container">
+              <div class="input-field">
+                 <!-- <a  class="blue-grey darken-1 white-text" href=""> -->
+                  <button class="btn waves-effect blue-grey darken-1" type="submit" name="action">Checkout
+                  <i class="material-icons right"></i>
+                  </button>  
+                 <!-- </a> -->
+              </div>
+            </div>
+        </form>
+    </div>
+     
+    <!-- brings you back to top -->
+    <div class="fixed-action-btn">
+      <a href="#top" class="btn-floating btn-large blue-grey">
+        <i class="large material-icons">arrow_upward</i>
+      </a>
+    </div>
+    <!-- <script>
+       onClick="Moveto()"
+       onclick="window.location.href='Order_Confirmation.html'"
+      
+      function Moveto(){
+        // document.getElementById('fbtn').innerHTML =  window.location.href = "Order_Confirmation.html";
+        document.location.href = "Order_Confirmation.html";
+        };
+      // document.addEventListener('DOMContentLoaded', function(){
+      //   var Moveto = document.querySelector('#checkOut-form');
+      
+        
+      // });
+    </script> -->
+  
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"></script>
+    <script type="module"  src="https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js"></script>
+    
+  
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/index.js"></script>
+  <script type="module" src="../../js/hsa.js"></script>
+  <!-- the hsa.js script kept giving a GET error because of the CORS policy so I added an extension on chrome called web server to resolve the problem -->
 
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var provSel = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(provSel, options);
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var datSel = document.querySelectorAll('.datepicker');
-      var instances = M.Datepicker.init(datSel, options);
-      format: "mm/yy"
-    });
-  </script>
+ 
+  
+  
 </body>
 
 </html>
